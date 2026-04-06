@@ -3,7 +3,7 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ContactSection from "@/components/sections/ContactSection";
 
-
+export const dynamic = 'force-dynamic';
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
