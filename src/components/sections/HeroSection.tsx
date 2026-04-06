@@ -41,7 +41,9 @@ export default function HeroSection() {
                             Start Project <ArrowRight size={20} />
                         </Link>
                         <Link
-                            href="/work"
+                            href="https://www.instagram.com/le_cygnex?igsh=MjJ5dmtjeXl5c2Zw"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="px-8 py-4 border border-white/20 text-white rounded-full hover:bg-white/10 transition-all backdrop-blur-sm"
                         >
                             View Work
