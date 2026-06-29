@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ const works = [
     },
     {
         title: "Velox Racing",
-        category: "3D Animation",
+        category: "Creative Strategy",
         image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop",
         link: "https://example.com/velox",
     },
@@ -52,27 +52,35 @@ export default function WorkGrid() {
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.08, type: "spring", stiffness: 80 }}
                     viewport={{ once: true }}
-                    className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 aspect-[4/3]"
+                    className="group relative overflow-hidden rounded-2xl bg-zinc-50 border border-zinc-200 aspect-[4/3] cursor-pointer shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
                     <Image
                         src={work.image}
                         alt={work.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-50"
+                        sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
 
                     <Link
                         href={work.link}
                         target="_blank"
-                        className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-100 transition-opacity"
+                        className="absolute inset-0 z-20"
                     >
-                        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                            <p className="text-primary text-sm font-medium mb-2">{work.category}</p>
-                            <div className="flex items-center justify-between">
-                                <h3 className="text-2xl font-bold text-white">{work.title}</h3>
-                                <ExternalLink className="text-white opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
+                        <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-zinc-100 p-5 translate-y-[calc(100%-72px)] group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-between">
+                            <div className="flex justify-between items-start">
+                                <div>
+                                    <span className="text-[10px] font-black tracking-widest text-blue-600 uppercase">{work.category}</span>
+                                    <h3 className="text-lg font-bold text-zinc-900 mt-1">{work.title}</h3>
+                                </div>
+                                <div className="p-2 bg-zinc-100 rounded-full text-zinc-700 group-hover:bg-zinc-900 group-hover:text-white transition-colors duration-300">
+                                    <ExternalLink size={14} />
+                                </div>
+                            </div>
+                            <div className="mt-4 pt-4 border-t border-zinc-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 flex items-center gap-1.5 text-xs font-bold text-zinc-800">
+                                Explore Project <ArrowRight size={12} />
                             </div>
                         </div>
                     </Link>
