@@ -23,7 +23,7 @@ export default function AboutSection() {
     ];
 
     return (
-        <section id="about" className="py-24 bg-transparent border-t border-zinc-200/80">
+        <section id="about" className="py-24 bg-transparent border-t border-zinc-900/80">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     {/* Left Column - Text Content */}
@@ -33,26 +33,26 @@ export default function AboutSection() {
                         transition={{ type: "spring", stiffness: 80 }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded-full inline-block mb-4">
+                        <span className="text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-500/10 border border-blue-500/20 px-3.5 py-1.5 rounded-full inline-block mb-4">
                             Our Philosophy
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-zinc-900 mb-6 leading-tight">
+                        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-6 leading-tight">
                             We Don't Just Design. <br />
-                            <span className="text-blue-600">We Engineer Success.</span>
+                            <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">We Engineer Success.</span>
                         </h2>
-                        <p className="text-zinc-600 text-lg mb-6 leading-relaxed">
-                            At <strong className="text-zinc-900 font-semibold">Le Cygnex</strong>, we believe that powerful design is more than just aesthetics—it’s a strategic asset. We combine artistic vision with engineering precision to build digital experiences that convert, engage, and inspire.
+                        <p className="text-zinc-400 text-lg mb-6 leading-relaxed">
+                            At <strong className="text-white font-semibold">Le Cygnex</strong>, we believe that powerful design is more than just aesthetics—it’s a strategic asset. We combine artistic vision with engineering precision to build digital experiences that convert, engage, and inspire.
                         </p>
                         
                         {/* Stats Grid */}
-                        <div className="grid grid-cols-2 gap-8 mt-10 pt-8 border-t border-zinc-100">
+                        <div className="grid grid-cols-2 gap-8 mt-10 pt-8 border-t border-zinc-900">
                             <div>
-                                <h4 className="text-4xl font-black text-zinc-900 mb-1">50+</h4>
-                                <p className="text-zinc-500 text-sm font-medium">Projects Delivered</p>
+                                <h4 className="text-4xl font-black text-white mb-1 tracking-tight">50+</h4>
+                                <p className="text-zinc-500 text-sm font-semibold uppercase tracking-wider">Projects Delivered</p>
                             </div>
                             <div>
-                                <h4 className="text-4xl font-black text-zinc-900 mb-1">100%</h4>
-                                <p className="text-zinc-500 text-sm font-medium">Client Satisfaction</p>
+                                <h4 className="text-4xl font-black text-white mb-1 tracking-tight">100%</h4>
+                                <p className="text-zinc-500 text-sm font-semibold uppercase tracking-wider">Client Satisfaction</p>
                             </div>
                         </div>
                     </motion.div>
@@ -63,9 +63,12 @@ export default function AboutSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ type: "spring", stiffness: 80, delay: 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden"
+                        className="bg-zinc-900/20 border border-zinc-800/80 rounded-3xl p-8 md:p-10 shadow-xl backdrop-blur-sm relative overflow-hidden"
                     >
-                        <h3 className="text-2xl font-bold text-zinc-900 mb-8 border-b border-zinc-200 pb-4">
+                        {/* Subtle glow orb inside card */}
+                        <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/10 rounded-full blur-xl pointer-events-none" />
+                        
+                        <h3 className="text-2xl font-bold text-white mb-8 border-b border-zinc-800/60 pb-4">
                             Our Core Principles
                         </h3>
                         
@@ -77,12 +80,12 @@ export default function AboutSection() {
                                     whileHover={{ x: 5 }}
                                     transition={{ type: "spring", stiffness: 200 }}
                                 >
-                                    <div className="mt-1 p-2 bg-blue-50 text-blue-600 rounded-lg">
+                                    <div className="mt-1 p-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-lg">
                                         <principle.icon size={18} />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-zinc-900 mb-1">{principle.title}</h4>
-                                        <p className="text-zinc-500 text-sm leading-relaxed">{principle.description}</p>
+                                        <h4 className="font-bold text-white mb-1">{principle.title}</h4>
+                                        <p className="text-zinc-400 text-sm leading-relaxed">{principle.description}</p>
                                     </div>
                                 </motion.div>
                             ))}
