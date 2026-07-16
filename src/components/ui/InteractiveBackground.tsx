@@ -43,9 +43,9 @@ export default function InteractiveBackground() {
       particles = [];
       const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 100);
       const colors = [
-        "rgba(37, 99, 235, 0.2)", // blue
-        "rgba(79, 70, 229, 0.2)", // indigo
-        "rgba(124, 58, 237, 0.2)", // violet
+        "rgba(37, 99, 235, 0.3)", // blue-600
+        "rgba(59, 130, 246, 0.3)", // blue-500
+        "rgba(96, 165, 250, 0.3)", // blue-400
       ];
 
       for (let i = 0; i < particleCount; i++) {
@@ -106,7 +106,7 @@ export default function InteractiveBackground() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
+            ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
