@@ -43,11 +43,11 @@ export default function AboutSection() {
                         <p className="text-zinc-650 text-lg mb-6 leading-relaxed">
                             At <strong className="text-zinc-900 font-semibold">Le Cygnex</strong>, we believe that powerful design is more than just aesthetics—it’s a strategic asset. We combine artistic vision with engineering precision to build digital experiences that convert, engage, and inspire.
                         </p>
-                        
+
                         {/* Stats Grid */}
                         <div className="grid grid-cols-2 gap-8 mt-10 pt-8 border-t border-zinc-200">
                             <div>
-                                <h4 className="text-4xl font-black text-zinc-900 mb-1 tracking-tight">50+</h4>
+                                <h4 className="text-4xl font-black text-zinc-900 mb-1 tracking-tight">70+</h4>
                                 <p className="text-zinc-500 text-sm font-semibold uppercase tracking-wider">Projects Delivered</p>
                             </div>
                             <div>
@@ -67,15 +67,15 @@ export default function AboutSection() {
                     >
                         {/* Subtle glow orb inside card */}
                         <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/5 rounded-full blur-xl pointer-events-none" />
-                        
+
                         <h3 className="text-2xl font-bold text-zinc-900 mb-8 border-b border-zinc-200 pb-4">
                             Our Core Principles
                         </h3>
-                        
+
                         <div className="space-y-8">
                             {principles.map((principle, idx) => (
-                                <motion.div 
-                                    key={idx} 
+                                <motion.div
+                                    key={idx}
                                     className="flex gap-4 items-start"
                                     whileHover={{ x: 5 }}
                                     transition={{ type: "spring", stiffness: 200 }}
