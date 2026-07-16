@@ -16,11 +16,25 @@ export default function Navbar() {
         { name: "Contact", href: "/#contact" },
     ];
 
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith("/#") && window.location.pathname === "/") {
+            e.preventDefault();
+            const targetId = href.replace("/#", "");
+            const elem = document.getElementById(targetId);
+            if (elem) {
+                elem.scrollIntoView({ behavior: "smooth" });
+            }
+        } else if (href === "/" && window.location.pathname === "/") {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
+
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 md:p-6 pointer-events-none">
-            <nav className="pointer-events-auto w-full max-w-6xl rounded-full border border-white/10 bg-zinc-950/60 backdrop-blur-md shadow-2xl transition-all duration-300">
+            <nav className="pointer-events-auto w-full max-w-6xl rounded-full border border-zinc-300 bg-zinc-100/90 backdrop-blur-md shadow-lg transition-all duration-300">
                 <div className="px-6 h-14 md:h-16 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2 group">
+                    <Link href="/" className="flex items-center gap-2 group" onClick={(e) => handleScroll(e, "/")}>
                         <div className="relative w-7 h-7 md:w-8 md:h-8 transition-transform duration-300 group-hover:scale-105">
                             <Image
                                 src="/logo.png"
@@ -30,8 +44,8 @@ export default function Navbar() {
                                 priority
                             />
                         </div>
-                        <span className="text-lg md:text-xl font-black tracking-tighter text-white">
-                            <span className="text-blue-400">Le</span> Cygnex
+                        <span className="text-lg md:text-xl font-black tracking-tighter text-blue-800">
+                            <span className="text-blue-600">Le</span> Cygnex
                         </span>
                     </Link>
 
@@ -41,7 +55,8 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-xs md:text-sm font-medium text-zinc-400 hover:text-white transition-colors relative py-1"
+                                className="text-xs md:text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors relative py-1"
+                                onClick={(e) => handleScroll(e, link.href)}
                             >
                                 {link.name}
                             </Link>
@@ -54,7 +69,7 @@ export default function Navbar() {
                                 href="https://wa.me/919074063277" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-xs font-bold hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.25)] hover:shadow-[0_0_25px_rgba(59,130,246,0.45)]"
+                                className="px-5 py-2 bg-blue-600 text-white rounded-full text-xs font-bold hover:bg-blue-700 transition-all duration-300 shadow-sm"
                             >
                                 Get Started
                             </Link>
@@ -63,7 +78,7 @@ export default function Navbar() {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden text-white hover:text-blue-400 transition-colors cursor-pointer"
+                        className="md:hidden text-blue-600 hover:text-blue-800 transition-colors cursor-pointer"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -77,15 +92,18 @@ export default function Navbar() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="md:hidden border-t border-white/5 overflow-hidden rounded-b-3xl"
+                            className="md:hidden border-t border-zinc-300 overflow-hidden rounded-b-3xl"
                         >
-                            <div className="px-6 py-4 flex flex-col gap-3.5 bg-zinc-950/95 backdrop-blur-md">
+                            <div className="px-6 py-4 flex flex-col gap-3.5 bg-zinc-100/95 backdrop-blur-md">
                                 {navLinks.map((link) => (
                                     <Link
                                         key={link.name}
                                         href={link.href}
-                                        className="text-base font-semibold text-zinc-300 hover:text-white"
-                                        onClick={() => setIsOpen(false)}
+                                        className="text-base font-semibold text-blue-600 hover:text-blue-800"
+                                        onClick={(e) => {
+                                            handleScroll(e, link.href);
+                                            setIsOpen(false);
+                                        }}
                                     >
                                         {link.name}
                                     </Link>
@@ -94,7 +112,7 @@ export default function Navbar() {
                                     href="https://wa.me/919074063277" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center rounded-full text-sm font-semibold hover:from-blue-500 hover:to-indigo-500 transition-all shadow-md block mt-2"
+                                    className="px-5 py-2.5 bg-blue-600 text-white text-center rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-sm block mt-2"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     Get Started

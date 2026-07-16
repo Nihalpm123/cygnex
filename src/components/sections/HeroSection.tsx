@@ -7,13 +7,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 export default function HeroSection() {
     return (
         <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent py-20">
-            {/* Minimal Background Gridlines for Editorial Feel */}
-            <div className="absolute inset-0 pointer-events-none flex justify-between px-6 md:px-24">
-                <div className="w-[1px] h-full bg-white/5" />
-                <div className="w-[1px] h-full bg-white/5 hidden md:block" />
-                <div className="w-[1px] h-full bg-white/5 hidden md:block" />
-                <div className="w-[1px] h-full bg-white/5" />
-            </div>
+
 
             {/* Glowing background hub */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
@@ -38,7 +32,7 @@ export default function HeroSection() {
                             hidden: { opacity: 0, y: 15 },
                             visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
                         }}
-                        className="inline-block text-xs md:text-sm font-bold tracking-widest text-blue-400 mb-4 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full"
+                        className="inline-block text-xs md:text-sm font-bold tracking-widest text-blue-600 mb-4 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full"
                     >
                         Digital Marketing & Design Agency
                     </motion.span>
@@ -48,11 +42,11 @@ export default function HeroSection() {
                             hidden: { opacity: 0, y: 20 },
                             visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
                         }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-6 leading-[1.05]"
+                        className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-zinc-900 mb-6 leading-[1.1]"
                     >
-                        Sculpting <br />
-                        <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent relative">
-                            Digital Realities
+                        Not Just Marketing. <br />
+                        <span className="text-blue-600 relative">
+                            A Competitive Advantage.
                         </span>
                     </motion.h1>
 
@@ -61,9 +55,11 @@ export default function HeroSection() {
                             hidden: { opacity: 0, y: 20 },
                             visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
                         }}
-                        className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
+                        className="text-zinc-650 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
                     >
-                        Le Cygnex crafts exceptional digital experiences. We design, build, and optimize high-performance platforms to scale your brand with precision and aesthetic execution.
+                        High-performance websites and growth strategies for brands that play to win.
+                        We turn ambition into architecture — every page, every pixel built to perform.
+                        Because in a crowded market, only the sharpest brands get remembered.
                     </motion.p>
 
                     <motion.div
@@ -81,7 +77,7 @@ export default function HeroSection() {
                                 href="https://wa.me/919074063277"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-8 py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white font-semibold rounded-full hover:from-blue-500 hover:to-violet-500 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-blue-500/25"
+                                className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-blue-500/10"
                             >
                                 Start Project <ArrowRight size={18} />
                             </Link>
@@ -92,7 +88,7 @@ export default function HeroSection() {
                         >
                             <Link
                                 href="/work"
-                                className="px-8 py-4 border border-white/10 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/20 transition-all bg-white/5 backdrop-blur-sm shadow-sm"
+                                className="px-8 py-4 border border-zinc-200 text-zinc-800 font-semibold rounded-full hover:bg-zinc-50 hover:border-zinc-300 transition-all bg-white shadow-sm"
                             >
                                 View Work
                             </Link>
@@ -108,7 +104,7 @@ export default function HeroSection() {
                 transition={{ delay: 1, duration: 1 }}
                 className="w-full text-center flex flex-col items-center justify-center"
             >
-                <Link href="#services" className="group flex flex-col items-center gap-1.5 text-zinc-500 hover:text-white transition-colors">
+                <Link href="#services" className="group flex flex-col items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
                     <span className="text-xs tracking-widest uppercase font-medium">Scroll Down</span>
                     <motion.div
                         animate={{ y: [0, 6, 0] }}

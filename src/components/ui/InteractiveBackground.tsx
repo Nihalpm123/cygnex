@@ -43,9 +43,9 @@ export default function InteractiveBackground() {
       particles = [];
       const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 100);
       const colors = [
-        "rgba(59, 130, 246, 0.35)", // blue
-        "rgba(99, 102, 241, 0.35)", // indigo
-        "rgba(139, 92, 246, 0.35)", // violet
+        "rgba(37, 99, 235, 0.2)", // blue
+        "rgba(79, 70, 229, 0.2)", // indigo
+        "rgba(124, 58, 237, 0.2)", // violet
       ];
 
       for (let i = 0; i < particleCount; i++) {
@@ -153,7 +153,6 @@ export default function InteractiveBackground() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 pointer-events-none z-0 block"
-      style={{ mixBlendMode: "screen" }}
     />
   );
 }
