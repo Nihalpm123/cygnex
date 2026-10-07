@@ -50,46 +50,44 @@ const services = [
 
 export default function ServicesSection() {
     return (
-        <section id="services" className="py-24 bg-transparent border-t border-zinc-200 relative">
+        <section id="services" className="scroll-mt-20 md:scroll-mt-24 py-16 sm:py-20 md:py-24 bg-transparent border-t border-zinc-200/80 relative">
             {/* Ambient background glow */}
-            <div className="absolute top-1/3 right-10 w-[350px] h-[350px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none -z-10" />
+            <div className="absolute top-1/3 right-10 w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] bg-indigo-500/5 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none -z-10" />
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="text-center mb-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+                <div className="text-center mb-12 sm:mb-16 md:mb-20">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-black tracking-tight text-zinc-900 mb-4"
+                        className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-zinc-900 mb-3 sm:mb-4"
                     >
                         Our Expertise
                     </motion.h2>
-                    <p className="text-zinc-650 max-w-2xl mx-auto text-lg leading-relaxed">
+                    <p className="text-zinc-600 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed px-2">
                         We fuse creativity with technology to deliver comprehensive, high-performance digital solutions.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.08, type: "spring", stiffness: 80 }}
+                            transition={{ delay: index * 0.06, type: "spring", stiffness: 80 }}
                             viewport={{ once: true }}
-                            whileHover={{ 
-                                y: -8
-                            }}
-                            className={`p-8 rounded-2xl bg-zinc-50 border border-zinc-200 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-full shadow-sm hover:shadow-md ${service.glowClass}`}
+                            whileHover={{ y: -6 }}
+                            className={`p-6 sm:p-7 md:p-8 rounded-2xl bg-zinc-50/80 border border-zinc-200/90 transition-all duration-300 group cursor-pointer flex flex-col justify-between h-full shadow-sm hover:shadow-md ${service.glowClass}`}
                         >
                             <div>
-                                <div className={`mb-6 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${service.iconColor}`}>
-                                    <service.icon size={22} />
+                                <div className={`mb-5 w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-all duration-300 shrink-0 ${service.iconColor}`}>
+                                    <service.icon size={20} />
                                 </div>
-                                <h3 className="text-xl font-bold text-zinc-900 mb-3 group-hover:text-blue-600 transition-colors duration-350">
+                                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                                     {service.title}
                                 </h3>
-                                <p className="text-zinc-650 leading-relaxed text-sm group-hover:text-zinc-900 transition-colors duration-300">
+                                <p className="text-zinc-600 leading-relaxed text-xs sm:text-sm group-hover:text-zinc-900 transition-colors duration-300">
                                     {service.description}
                                 </p>
                             </div>
@@ -100,4 +98,3 @@ export default function ServicesSection() {
         </section>
     );
 }
-

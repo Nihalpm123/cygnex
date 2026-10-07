@@ -6,14 +6,12 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
     return (
-        <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent py-20">
-
-
+        <section className="relative w-full min-h-[100dvh] flex flex-col items-center justify-between overflow-hidden bg-transparent pt-28 sm:pt-36 md:pt-40 pb-8 sm:pb-12">
             {/* Glowing background hub */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-blue-500/5 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" />
 
             {/* Content Container */}
-            <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex-1 flex flex-col justify-center">
+            <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto my-auto w-full">
                 <motion.div
                     initial="hidden"
                     animate="visible"
@@ -27,24 +25,26 @@ export default function HeroSection() {
                         }
                     }}
                 >
-                    <motion.span
+                    <motion.div
                         variants={{
                             hidden: { opacity: 0, y: 15 },
                             visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
                         }}
-                        className="inline-block text-xs md:text-sm font-bold tracking-widest text-blue-600 mb-4 uppercase bg-blue-500/10 border border-blue-500/20 px-4 py-1.5 rounded-full"
+                        className="mb-4 sm:mb-6"
                     >
-                        Digital Marketing & Design Agency
-                    </motion.span>
+                        <span className="inline-block text-[11px] sm:text-xs md:text-sm font-bold tracking-wider sm:tracking-widest text-blue-600 uppercase bg-blue-500/10 border border-blue-500/20 px-3.5 py-1.5 rounded-full">
+                            Digital Marketing & Design Agency
+                        </span>
+                    </motion.div>
 
                     <motion.h1
                         variants={{
                             hidden: { opacity: 0, y: 20 },
                             visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
                         }}
-                        className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-zinc-900 mb-6 leading-[1.1]"
+                        className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-zinc-900 mb-5 sm:mb-6 leading-[1.18] sm:leading-[1.1] max-w-4xl mx-auto"
                     >
-                        Not Just Marketing. <br />
+                        Not Just Marketing. <br className="hidden xs:inline" />
                         <span className="text-blue-600 relative">
                             A Competitive Advantage.
                         </span>
@@ -55,7 +55,7 @@ export default function HeroSection() {
                             hidden: { opacity: 0, y: 20 },
                             visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
                         }}
-                        className="text-zinc-650 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
+                        className="text-zinc-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-normal px-2"
                     >
                         High-performance websites and growth strategies for brands that play to win.
                         We turn ambition into architecture — every page, every pixel built to perform.
@@ -67,28 +67,30 @@ export default function HeroSection() {
                             hidden: { opacity: 0, y: 20 },
                             visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
                         }}
-                        className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                        className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center items-center w-full max-w-xs sm:max-w-none mx-auto"
                     >
                         <motion.div
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.97 }}
+                            className="w-full sm:w-auto"
                         >
                             <Link
                                 href="https://wa.me/919074063277"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-blue-500/10"
+                                className="w-full sm:w-auto min-w-[170px] px-8 py-3.5 sm:py-4 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/10 text-center"
                             >
-                                Start Project <ArrowRight size={18} />
+                                Start Project <ArrowRight size={16} />
                             </Link>
                         </motion.div>
                         <motion.div
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.97 }}
+                            className="w-full sm:w-auto"
                         >
                             <Link
                                 href="/work"
-                                className="px-8 py-4 border border-zinc-200 text-zinc-800 font-semibold rounded-full hover:bg-zinc-50 hover:border-zinc-300 transition-all bg-white shadow-sm"
+                                className="w-full sm:w-auto min-w-[170px] px-8 py-3.5 sm:py-4 border border-zinc-200 text-zinc-800 text-sm sm:text-base font-semibold rounded-full hover:bg-zinc-50 hover:border-zinc-300 transition-all bg-white shadow-sm flex items-center justify-center text-center"
                             >
                                 View Work
                             </Link>
@@ -102,19 +104,18 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="w-full text-center flex flex-col items-center justify-center"
+                className="w-full text-center flex flex-col items-center justify-center mt-6 sm:mt-8 shrink-0"
             >
-                <Link href="#services" className="group flex flex-col items-center gap-1.5 text-zinc-500 hover:text-zinc-900 transition-colors">
-                    <span className="text-xs tracking-widest uppercase font-medium">Scroll Down</span>
+                <Link href="#services" className="group flex flex-col items-center gap-1 text-zinc-400 hover:text-zinc-800 transition-colors">
+                    <span className="text-[10px] sm:text-xs tracking-widest uppercase font-semibold">Scroll Down</span>
                     <motion.div
-                        animate={{ y: [0, 6, 0] }}
-                        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                        animate={{ y: [0, 5, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
                     >
-                        <ChevronDown size={20} />
+                        <ChevronDown size={18} />
                     </motion.div>
                 </Link>
             </motion.div>
         </section>
     );
 }
-

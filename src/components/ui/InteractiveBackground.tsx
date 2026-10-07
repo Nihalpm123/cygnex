@@ -33,28 +33,29 @@ export default function InteractiveBackground() {
     const mouse = { x: -1000, y: -1000, active: false };
 
     const resizeCanvas = () => {
-      const parent = canvas.parentElement;
-      canvas.width = parent ? parent.clientWidth : window.innerWidth;
-      canvas.height = parent ? parent.clientHeight : window.innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
       initParticles();
     };
 
     const initParticles = () => {
       particles = [];
-      const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 100);
+      // Moderate particle count for high 60fps performance on mobile
+      const isMobile = window.innerWidth < 768;
+      const count = isMobile ? 35 : 70;
       const colors = [
-        "rgba(37, 99, 235, 0.3)", // blue-600
-        "rgba(59, 130, 246, 0.3)", // blue-500
-        "rgba(96, 165, 250, 0.3)", // blue-400
+        "rgba(37, 99, 235, 0.28)", // blue-600
+        "rgba(59, 130, 246, 0.28)", // blue-500
+        "rgba(96, 165, 250, 0.25)", // blue-400
       ];
 
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          radius: Math.random() * 2 + 1,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          radius: Math.random() * 1.8 + 1,
           color: colors[Math.floor(Math.random() * colors.length)],
         });
       }
@@ -74,13 +75,12 @@ export default function InteractiveBackground() {
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
-        // Interaction with mouse
+        // Interaction with mouse/touch
         if (mouse.active) {
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 150) {
-            // Gentle attraction
+          if (distance < 120) {
             p.x += (dx / distance) * 0.2;
             p.y += (dy / distance) * 0.2;
           }
@@ -93,6 +93,7 @@ export default function InteractiveBackground() {
       });
 
       // Draw connections
+      const maxDistance = window.innerWidth < 768 ? 85 : 100;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const p1 = particles[i];
@@ -101,8 +102,8 @@ export default function InteractiveBackground() {
           const dy = p1.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 100) {
-            const alpha = (1 - dist / 100) * 0.15;
+          if (dist < maxDistance) {
+            const alpha = (1 - dist / maxDistance) * 0.12;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
@@ -118,9 +119,8 @@ export default function InteractiveBackground() {
 
     // Listeners
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
       mouse.active = true;
     };
 
@@ -130,12 +130,24 @@ export default function InteractiveBackground() {
       mouse.y = -1000;
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+        mouse.active = true;
+      }
+    };
+
+    const handleTouchEnd = () => {
+      mouse.active = false;
+    };
+
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
-    
-    // Bind listeners to parent or window for global interaction
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd);
 
     animate();
 
@@ -144,6 +156,8 @@ export default function InteractiveBackground() {
       window.removeEventListener("resize", resizeCanvas);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [isMounted]);
 
@@ -152,7 +166,7 @@ export default function InteractiveBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none z-0 block"
+      className="fixed inset-0 pointer-events-none z-0 block"
     />
   );
 }

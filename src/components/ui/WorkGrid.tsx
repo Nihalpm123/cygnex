@@ -46,7 +46,7 @@ const works = [
 
 export default function WorkGrid() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {works.map((work, index) => (
                 <motion.div
                     key={index}
@@ -60,7 +60,7 @@ export default function WorkGrid() {
                         src={work.image}
                         alt={work.title}
                         fill
-                        sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
 
@@ -69,17 +69,17 @@ export default function WorkGrid() {
                         target="_blank"
                         className="absolute inset-0 z-20"
                     >
-                        <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-zinc-200 p-5 translate-y-[calc(100%-72px)] group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-between">
+                        <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-zinc-200 p-4 sm:p-5 sm:translate-y-[calc(100%-72px)] sm:group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col justify-between">
                             <div className="flex justify-between items-start">
                                 <div>
                                     <span className="text-[10px] font-black tracking-widest text-blue-600 uppercase">{work.category}</span>
-                                    <h3 className="text-lg font-bold text-zinc-900 mt-1">{work.title}</h3>
+                                    <h3 className="text-base sm:text-lg font-bold text-zinc-900 mt-0.5">{work.title}</h3>
                                 </div>
-                                <div className="p-2 bg-zinc-100 text-zinc-650 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 border border-zinc-200">
+                                <div className="p-1.5 sm:p-2 bg-zinc-100 text-zinc-600 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 border border-zinc-200">
                                     <ExternalLink size={14} />
                                 </div>
                             </div>
-                            <div className="mt-4 pt-4 border-t border-zinc-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 flex items-center gap-1.5 text-xs font-bold text-zinc-700">
+                            <div className="mt-3 pt-3 border-t border-zinc-200/80 flex sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 delay-100 items-center gap-1.5 text-xs font-bold text-zinc-700">
                                 Explore Project <ArrowRight size={12} />
                             </div>
                         </div>
@@ -89,4 +89,3 @@ export default function WorkGrid() {
         </div>
     );
 }
-

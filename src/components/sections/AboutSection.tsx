@@ -23,9 +23,9 @@ export default function AboutSection() {
     ];
 
     return (
-        <section id="about" className="py-24 bg-transparent border-t border-zinc-200">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
+        <section id="about" className="scroll-mt-20 md:scroll-mt-24 py-16 sm:py-20 md:py-24 bg-transparent border-t border-zinc-200/80">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                <div className="grid md:grid-cols-2 gap-10 sm:gap-12 md:gap-16 items-center">
                     {/* Left Column - Text Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -33,26 +33,26 @@ export default function AboutSection() {
                         transition={{ type: "spring", stiffness: 80 }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-500/10 border border-blue-500/20 px-3.5 py-1.5 rounded-full inline-block mb-4">
+                        <span className="text-[11px] sm:text-xs font-bold tracking-wider sm:tracking-widest text-blue-600 uppercase bg-blue-500/10 border border-blue-500/20 px-3.5 py-1.5 rounded-full inline-block mb-4">
                             Our Philosophy
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-zinc-900 mb-6 leading-tight">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-zinc-900 mb-4 sm:mb-6 leading-tight">
                             We Don't Just Design. <br />
                             <span className="text-blue-600">We Engineer Success.</span>
                         </h2>
-                        <p className="text-zinc-650 text-lg mb-6 leading-relaxed">
+                        <p className="text-zinc-600 text-sm sm:text-base md:text-lg mb-6 leading-relaxed">
                             At <strong className="text-zinc-900 font-semibold">Le Cygnex</strong>, we believe that powerful design is more than just aesthetics—it’s a strategic asset. We combine artistic vision with engineering precision to build digital experiences that convert, engage, and inspire.
                         </p>
 
                         {/* Stats Grid */}
-                        <div className="grid grid-cols-2 gap-8 mt-10 pt-8 border-t border-zinc-200">
+                        <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-zinc-200">
                             <div>
-                                <h4 className="text-4xl font-black text-zinc-900 mb-1 tracking-tight">70+</h4>
-                                <p className="text-zinc-500 text-sm font-semibold uppercase tracking-wider">Projects Delivered</p>
+                                <h4 className="text-3xl sm:text-4xl font-black text-zinc-900 mb-1 tracking-tight">70+</h4>
+                                <p className="text-zinc-500 text-xs sm:text-sm font-semibold uppercase tracking-wider">Projects Delivered</p>
                             </div>
                             <div>
-                                <h4 className="text-4xl font-black text-zinc-900 mb-1 tracking-tight">100%</h4>
-                                <p className="text-zinc-500 text-sm font-semibold uppercase tracking-wider">Client Satisfaction</p>
+                                <h4 className="text-3xl sm:text-4xl font-black text-zinc-900 mb-1 tracking-tight">100%</h4>
+                                <p className="text-zinc-500 text-xs sm:text-sm font-semibold uppercase tracking-wider">Client Satisfaction</p>
                             </div>
                         </div>
                     </motion.div>
@@ -63,29 +63,29 @@ export default function AboutSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ type: "spring", stiffness: 80, delay: 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden"
+                        className="bg-zinc-50/80 border border-zinc-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden"
                     >
                         {/* Subtle glow orb inside card */}
                         <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/5 rounded-full blur-xl pointer-events-none" />
 
-                        <h3 className="text-2xl font-bold text-zinc-900 mb-8 border-b border-zinc-200 pb-4">
+                        <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-6 sm:mb-8 border-b border-zinc-200/80 pb-4">
                             Our Core Principles
                         </h3>
 
-                        <div className="space-y-8">
+                        <div className="space-y-6 sm:space-y-8">
                             {principles.map((principle, idx) => (
                                 <motion.div
                                     key={idx}
-                                    className="flex gap-4 items-start"
-                                    whileHover={{ x: 5 }}
+                                    className="flex gap-3.5 sm:gap-4 items-start"
+                                    whileHover={{ x: 4 }}
                                     transition={{ type: "spring", stiffness: 200 }}
                                 >
-                                    <div className="mt-1 p-2 bg-blue-500/10 text-blue-600 border border-blue-500/20 rounded-lg">
+                                    <div className="mt-0.5 p-2 bg-blue-500/10 text-blue-600 border border-blue-500/20 rounded-xl shrink-0">
                                         <principle.icon size={18} />
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-zinc-900 mb-1">{principle.title}</h4>
-                                        <p className="text-zinc-650 text-sm leading-relaxed">{principle.description}</p>
+                                        <h4 className="font-bold text-zinc-900 text-sm sm:text-base mb-1">{principle.title}</h4>
+                                        <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed">{principle.description}</p>
                                     </div>
                                 </motion.div>
                             ))}
