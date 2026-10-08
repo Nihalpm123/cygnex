@@ -84,7 +84,7 @@ export default function ServicesSection() {
                                 <div className={`mb-5 w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-all duration-300 shrink-0 ${service.iconColor}`}>
                                     <service.icon size={20} />
                                 </div>
-                                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 mb-2 group-hover:text-[#07076b] transition-colors duration-300">
                                     {service.title}
                                 </h3>
                                 <p className="text-zinc-600 leading-relaxed text-xs sm:text-sm group-hover:text-zinc-900 transition-colors duration-300">

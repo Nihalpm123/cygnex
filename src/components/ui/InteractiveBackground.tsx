@@ -44,9 +44,9 @@ export default function InteractiveBackground() {
       const isMobile = window.innerWidth < 768;
       const count = isMobile ? 35 : 70;
       const colors = [
-        "rgba(37, 99, 235, 0.28)", // blue-600
-        "rgba(59, 130, 246, 0.28)", // blue-500
-        "rgba(96, 165, 250, 0.25)", // blue-400
+        "rgba(7, 7, 107, 0.32)",
+        "rgba(14, 14, 138, 0.28)",
+        "rgba(25, 25, 160, 0.22)",
       ];
 
       for (let i = 0; i < count; i++) {
@@ -107,7 +107,7 @@ export default function InteractiveBackground() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
+            ctx.strokeStyle = `rgba(7, 7, 107, ${alpha})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

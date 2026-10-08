@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #09090b;
-  --primary: #2563eb;
+  --primary: #07076b;
   --secondary: #f4f4f5;
   --accent: #71717a;
   --card-bg: rgba(255, 255, 255, 0.7);
@@ -44,7 +44,7 @@ body::before {
   left: 10%;
   width: min(400px, 80vw);
   height: min(400px, 80vw);
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(7, 7, 107, 0.05) 0%, transparent 70%);
   z-index: -1;
   pointer-events: none;
   filter: blur(40px);
@@ -57,7 +57,7 @@ body::after {
   right: 5%;
   width: min(450px, 85vw);
   height: min(450px, 85vw);
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.04) 0%, transparent 75%);
+  background: radial-gradient(circle, rgba(11, 11, 140, 0.04) 0%, transparent 75%);
   z-index: -1;
   pointer-events: none;
   filter: blur(50px);
@@ -87,5 +87,5 @@ body::after {
 }
 
 .text-gradient-primary {
-  color: #2563eb;
+  color: #07076b;
 }

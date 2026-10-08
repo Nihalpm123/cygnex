@@ -52,7 +52,7 @@ export default function SiteLoader() {
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white pointer-events-auto"
         >
           {/* Subtle ambient brand aura */}
-          <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-blue-500/10 blur-[80px] pointer-events-none" />
+          <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-[#07076b]/10 blur-[80px] pointer-events-none" />
           <div className="absolute w-44 h-44 rounded-full bg-amber-400/15 blur-[60px] pointer-events-none translate-x-10 translate-y-8" />
 
           <div className="relative z-10 flex flex-col items-center px-6">
@@ -63,7 +63,7 @@ export default function SiteLoader() {
               transition={{ duration: 0.45, ease: "easeOut" }}
               className="relative mb-5"
             >
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 p-3 rounded-2xl bg-white border border-zinc-200/90 shadow-xl shadow-blue-500/10 flex items-center justify-center">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 p-3 rounded-2xl bg-white border border-zinc-200/90 shadow-xl shadow-[#07076b]/10 flex items-center justify-center">
                 <Image
                   src="/logo.png"
                   alt="Le Cygnex Logo"
@@ -75,7 +75,7 @@ export default function SiteLoader() {
               </div>
 
               {/* Ping glow ring around logo */}
-              <span className="absolute -inset-1.5 rounded-2xl bg-blue-500/20 animate-ping -z-10 opacity-70" />
+              <span className="absolute -inset-1.5 rounded-2xl bg-[#07076b]/20 animate-ping -z-10 opacity-70" />
             </motion.div>
 
             {/* Brand title */}
@@ -85,8 +85,8 @@ export default function SiteLoader() {
               transition={{ delay: 0.1, duration: 0.4 }}
               className="text-center mb-6"
             >
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-zinc-900">
-                <span className="text-blue-600">Le</span> Cygnex
+              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-[#07076b]">
+                LE CYGNEX
               </h1>
               <p className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-zinc-500 mt-1">
                 Digital Marketing & Design Agency
@@ -101,7 +101,7 @@ export default function SiteLoader() {
               className="h-1.5 bg-zinc-100 rounded-full overflow-hidden border border-zinc-200 shadow-inner relative"
             >
               <div
-                className="h-full bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 rounded-full transition-all duration-75 relative"
+                className="h-full bg-gradient-to-r from-[#07076b] via-[#0d0d87] to-[#1c1ca8] rounded-full transition-all duration-75 relative"
                 style={{ width: `${progress}%` }}
               >
                 <span className="absolute right-0 top-0 bottom-0 w-2.5 bg-white/70 rounded-full blur-[1px]" />

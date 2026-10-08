@@ -33,12 +33,12 @@ export default function AboutSection() {
                         transition={{ type: "spring", stiffness: 80 }}
                         viewport={{ once: true }}
                     >
-                        <span className="text-[11px] sm:text-xs font-bold tracking-wider sm:tracking-widest text-blue-600 uppercase bg-blue-500/10 border border-blue-500/20 px-3.5 py-1.5 rounded-full inline-block mb-4">
+                        <span className="text-[11px] sm:text-xs font-bold tracking-wider sm:tracking-widest text-[#07076b] uppercase bg-[#07076b]/10 border border-[#07076b]/20 px-3.5 py-1.5 rounded-full inline-block mb-4">
                             Our Philosophy
                         </span>
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-zinc-900 mb-4 sm:mb-6 leading-tight">
                             We Don't Just Design. <br />
-                            <span className="text-blue-600">We Engineer Success.</span>
+                            <span className="text-[#07076b]">We Engineer Success.</span>
                         </h2>
                         <p className="text-zinc-600 text-sm sm:text-base md:text-lg mb-6 leading-relaxed">
                             At <strong className="text-zinc-900 font-semibold">Le Cygnex</strong>, we believe that powerful design is more than just aesthetics—it’s a strategic asset. We combine artistic vision with engineering precision to build digital experiences that convert, engage, and inspire.
@@ -66,7 +66,7 @@ export default function AboutSection() {
                         className="bg-zinc-50/80 border border-zinc-200/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-sm relative overflow-hidden"
                     >
                         {/* Subtle glow orb inside card */}
-                        <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/5 rounded-full blur-xl pointer-events-none" />
+                        <div className="absolute -top-10 -right-10 w-24 h-24 bg-[#07076b]/5 rounded-full blur-xl pointer-events-none" />
 
                         <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-6 sm:mb-8 border-b border-zinc-200/80 pb-4">
                             Our Core Principles
@@ -80,7 +80,7 @@ export default function AboutSection() {
                                     whileHover={{ x: 4 }}
                                     transition={{ type: "spring", stiffness: 200 }}
                                 >
-                                    <div className="mt-0.5 p-2 bg-blue-500/10 text-blue-600 border border-blue-500/20 rounded-xl shrink-0">
+                                    <div className="mt-0.5 p-2 bg-[#07076b]/10 text-[#07076b] border border-[#07076b]/20 rounded-xl shrink-0">
                                         <principle.icon size={18} />
                                     </div>
                                     <div>

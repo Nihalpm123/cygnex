@@ -8,7 +8,7 @@ export default function HeroSection() {
     return (
         <section className="relative w-full min-h-[100dvh] flex flex-col items-center justify-between overflow-hidden bg-transparent pt-28 sm:pt-36 md:pt-40 pb-8 sm:pb-12">
             {/* Glowing background hub */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-blue-500/5 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-[#07076b]/5 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" />
 
             {/* Content Container */}
             <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto my-auto w-full">
@@ -32,7 +32,7 @@ export default function HeroSection() {
                         }}
                         className="mb-4 sm:mb-6"
                     >
-                        <span className="inline-block text-[11px] sm:text-xs md:text-sm font-bold tracking-wider sm:tracking-widest text-blue-600 uppercase bg-blue-500/10 border border-blue-500/20 px-3.5 py-1.5 rounded-full">
+                        <span className="inline-block text-[11px] sm:text-xs md:text-sm font-bold tracking-wider sm:tracking-widest text-[#07076b] uppercase bg-[#07076b]/10 border border-[#07076b]/20 px-3.5 py-1.5 rounded-full">
                             Digital Marketing & Design Agency
                         </span>
                     </motion.div>
@@ -45,7 +45,7 @@ export default function HeroSection() {
                         className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-zinc-900 mb-5 sm:mb-6 leading-[1.18] sm:leading-[1.1] max-w-4xl mx-auto"
                     >
                         Not Just Marketing. <br className="hidden xs:inline" />
-                        <span className="text-blue-600 relative">
+                        <span className="text-[#07076b] relative">
                             A Competitive Advantage.
                         </span>
                     </motion.h1>
@@ -78,7 +78,7 @@ export default function HeroSection() {
                                 href="https://wa.me/919074063277"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto min-w-[170px] px-8 py-3.5 sm:py-4 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/10 text-center"
+                                className="w-full sm:w-auto min-w-[170px] px-8 py-3.5 sm:py-4 bg-[#07076b] text-white text-sm sm:text-base font-semibold rounded-full hover:bg-[#050552] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-[#07076b]/20 text-center"
                             >
                                 Start Project <ArrowRight size={16} />
                             </Link>
@@ -90,7 +90,7 @@ export default function HeroSection() {
                         >
                             <Link
                                 href="/work"
-                                className="w-full sm:w-auto min-w-[170px] px-8 py-3.5 sm:py-4 border border-zinc-200 text-zinc-800 text-sm sm:text-base font-semibold rounded-full hover:bg-zinc-50 hover:border-zinc-300 transition-all bg-white shadow-sm flex items-center justify-center text-center"
+                                className="w-full sm:w-auto min-w-[170px] px-8 py-3.5 sm:py-4 border border-zinc-200 text-zinc-800 hover:text-[#07076b] hover:border-[#07076b]/40 text-sm sm:text-base font-semibold rounded-full hover:bg-zinc-50 transition-all bg-white shadow-sm flex items-center justify-center text-center"
                             >
                                 View Work
                             </Link>

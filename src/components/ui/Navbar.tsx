@@ -11,6 +11,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "Home", href: "/" },
+        { name: "Work", href: "/work" },
         { name: "Services", href: "/#services" },
         { name: "About", href: "/#about" },
         { name: "Contact", href: "/#contact" },
@@ -28,6 +29,10 @@ export default function Navbar() {
     }, []);
 
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href === "/work") {
+            // standard navigation to work page
+            return;
+        }
         if (href.startsWith("/#") && window.location.pathname === "/") {
             e.preventDefault();
             const targetId = href.replace("/#", "");
@@ -80,8 +85,8 @@ export default function Navbar() {
                                     priority
                                 />
                             </div>
-                            <span className="text-base sm:text-lg md:text-xl font-black tracking-tight text-zinc-900">
-                                <span className="text-blue-600">Le</span> Cygnex
+                            <span className="text-base sm:text-lg md:text-xl font-black tracking-tight text-[#07076b]">
+                                LE CYGNEX
                             </span>
                         </Link>
 
@@ -91,7 +96,7 @@ export default function Navbar() {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-xs md:text-sm font-semibold text-zinc-600 hover:text-blue-600 transition-colors relative py-1"
+                                    className="text-xs md:text-sm font-semibold text-zinc-600 hover:text-[#07076b] transition-colors relative py-1"
                                     onClick={(e) => handleScroll(e, link.href)}
                                 >
                                     {link.name}
@@ -105,7 +110,7 @@ export default function Navbar() {
                                     href="https://wa.me/919074063277" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="px-5 py-2 bg-blue-600 text-white rounded-full text-xs font-bold hover:bg-blue-700 transition-all duration-300 shadow-sm"
+                                    className="px-5 py-2 bg-[#07076b] text-white rounded-full text-xs font-bold hover:bg-[#050552] transition-all duration-300 shadow-md shadow-[#07076b]/20"
                                 >
                                     Get Started
                                 </Link>
@@ -114,7 +119,7 @@ export default function Navbar() {
 
                         {/* Mobile Menu Button */}
                         <button
-                            className="md:hidden p-2 text-zinc-700 hover:text-blue-600 transition-colors cursor-pointer rounded-full hover:bg-zinc-100"
+                            className="md:hidden p-2 text-zinc-700 hover:text-[#07076b] transition-colors cursor-pointer rounded-full hover:bg-zinc-100"
                             onClick={() => setIsOpen(!isOpen)}
                             aria-label="Toggle navigation menu"
                         >
@@ -137,7 +142,7 @@ export default function Navbar() {
                                         <Link
                                             key={link.name}
                                             href={link.href}
-                                            className="px-3 py-2.5 rounded-xl text-base font-semibold text-zinc-700 hover:text-blue-600 hover:bg-blue-50/60 transition-colors"
+                                            className="px-3 py-2.5 rounded-xl text-base font-semibold text-zinc-700 hover:text-[#07076b] hover:bg-[#07076b]/10 transition-colors"
                                             onClick={(e) => {
                                                 handleScroll(e, link.href);
                                                 setIsOpen(false);
@@ -151,7 +156,7 @@ export default function Navbar() {
                                             href="https://wa.me/919074063277" 
                                             target="_blank" 
                                             rel="noopener noreferrer" 
-                                            className="w-full py-3 bg-blue-600 text-white text-center rounded-xl text-sm font-bold hover:bg-blue-700 transition-all shadow-sm block active:scale-[0.99]"
+                                            className="w-full py-3 bg-[#07076b] text-white text-center rounded-xl text-sm font-bold hover:bg-[#050552] transition-all shadow-md shadow-[#07076b]/20 block active:scale-[0.99]"
                                             onClick={() => setIsOpen(false)}
                                         >
                                             Get Started
